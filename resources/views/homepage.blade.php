@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'wiki') }}</title>
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -19,23 +19,39 @@
             </style>
         @endif
     </head>
-    <body class="bg-black md:bg-white">
-        <div class="hidden md:block relative justify-center"> 
-            <img src="{{ asset('images/Berserk-Logo-PNG.png') }}" alt="logoBerserk" class="absolute z-2 mt-58 ml-50 w-280">
-            
-            <a href="/homepage" class=" absolute right-60 top-80 w-245 h-100  z-10 "></a>
-               
-            <img src="{{ asset('images/gutsespace.jpg') }}" alt="gutsPetitEspace" class="relative" >
-            <a href="/Guts"  class=" absolute right-0 bottom-0 w-150 h-60 " ></a>
+    <body class="bg-gray-500 flex flex-col min-h-screen">
+       <nav class="bg-gradient-to-r from-gray-900 via-black to-gray-900 "> 
+        <div class="container mx-auto flex  justify-center items-center">
+            <a href="/homepage" class="inline-block"> <img src="{{ asset('images/Berserk-Logo-PNG.png') }}" alt="logoBerserk" class="m-auto w-56 h-22"></a>
         </div>
+    </nav>
 
-        <div class="block  mt-32 sm:hidden relative justify-center">
-            <img src="{{  asset('images/gutsGriffith.png') }}" alt="GutsVsGriffithAccueil">
+    <div class="bg-black ">
 
-            <a href="/Griffith" class="absolute top-0 w-full h-50 "></a>
-            <a href="/Guts" class="absolute bottom-0 w-full h-50 "></a>
-            <a href="/homepage" class="absolute top-50 left-32 w-40 h-58 "></a>
-
+        <div class="relative grid md:grid-cols-3 md:grid-rows-2 ">
+           <div >
+            <a href="/Guts"> 
+                <img src="{{ asset('images/gutsMecheBlanche.png') }}" alt="GutsMecheBlanche" >
+            </a>
+            </div>
+            <div >
+            <a href="/Griffith"> 
+                <img src="{{ asset('images/Griffith.png') }}" alt="GriffithHomepage" class="w-full h-full">
+            </a>
+            </div>           
+             <p class="text-white">Casca</p>
+            <p class="bg-green-300"></p>
+            <p class="bg-purple-300"></p>
+            <p></p>
+            <p></p>
+            <p class="bg-red-500"></p>
+            <p></p>
+            <p></p>
+            <p class="bg-pink-500"></p>
         </div>
+        
+
+    </div>
+
     </body>
 </html>

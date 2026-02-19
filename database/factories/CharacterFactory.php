@@ -17,7 +17,7 @@ class CharacterFactory extends Factory
     public function definition(): array
     {
         return [
-            'name'=>fake()->randomElement(['Guts','Casca','Griffith']),
+            'name'=>fake()->randomElement(['Griffith','Guts','Casca']),
             'description'=>fake()->text(1200),
             'before_eclipse'=>fake()->text(1200),
             'after_eclipse'=>fake()->text(1200)

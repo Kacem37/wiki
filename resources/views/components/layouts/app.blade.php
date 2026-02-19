@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Wiki') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -20,38 +20,72 @@
         @endif
     </head>
     <body class="bg-gray-500 flex flex-col min-h-screen">
-       <nav class="bg-gradient-to-r from-gray-900 via-black to-gray-900 "> 
-        <div class="container mx-auto flex  justify-center items-center">
-            <a href="/homepage" class="inline-block"> <img src="{{ asset('images/Berserk-Logo-PNG.png') }}" alt="logoBerserk" class="m-auto w-56 h-22"></a>
-        </div>
-    </nav>
-
-    <div class="bg-black ml-68 mr-68 mb-0">
-
-        <div class=" relative grid grid-cols-2 grid-rows-6 ">
-           <div >
-            <a href="/Guts"> 
-                <img src="{{ asset('images/gutsMecheBlanche.png') }}" alt="GutsMecheBlanche" >
-            </a>
+       <nav class="fixed top-0 left-0 w-full z-20  bg-gradient-to-r from-gray-900 via-black to-gray-900">
+            <div class=" container mx-auto flex  justify-center items-center">
+               <a href="/" class="inline-block"> <img src="{{ asset('images/Berserk-Logo-PNG.png') }}" alt="logoBerserk" class="m-auto w-56 h-22"></a>
             </div>
-            <div >
-            <a href="/Griffith"> 
-                <img src="{{ asset('images/GriffithHomepage.png') }}" alt="GriffithPostRenaissance" class="w-full h-full">
-            </a>
-            </div>           
-             <p class="text-white">Casca</p>
-            <p class="bg-green-300"></p>
-            <p class="bg-purple-300"></p>
-            <p></p>
-            <p></p>
-            <p class="bg-red-500"></p>
-            <p></p>
-            <p></p>
-            <p class="bg-pink-500"></p>
-        </div>
-        
+        </nav> 
 
+{{-- Le conteneur flex doit avoir items-start --}}
+<div class="flex flex-col lg:flex-row md:flex-row md:bg-black items-start pt-21">
+
+    {{-- Image gauche : cachée sur mobile --}}
+    <div class="hidden lg:block lg:sticky lg:top-20 lg:w-60 xl:w-80 shrink-0 ">
+        @yield('image_cotegauche')
     </div>
 
+    
+
+    {{-- Contenu central --}}
+        <div class="flex-1 bg-gradient-to-t from-gray-900 via-black to-gray-900 w-full  ">
+            <div class="flex p4 md:p-6 justify-center items-center">
+                <h1 class=" text-3xl md:text-5xl text-white font-bold uppercase">{{ $character->name }} </h1>
+            </div>
+            <hr class="border-white">
+            <div class="block md:ml-18 lg:hidden mt-1">
+                @yield('imagePersoPetitScreen')
+            </div>
+            <div class="p-4 pr-4 pl-4 md:pt-5 md:pr-5 md:pl-5">
+               <div class="flex items-center ml-4">
+                    <h2 class="text-white text-2xl md:text-4xl pb-2 pr-2 shrink-0">Description</h2> 
+                    <hr class="text-white h-5  flex-1 ml-2 bg-white">
+                </div>
+            
+                <p class="text-white text-sm md:text-base leading-relaxed p-5 ">
+                     @yield('description') 
+                </p>
+                <div class="pt-4 pr-4 pl-4 md:pt-5 md:pr-5 md:pl-5">
+                    <div class="flex items-center mb-4">
+                        <h2 class="text-white text-2xl  md:text-4xl pb-2 pr-2 shrink-0">Avant l'éclipse</h2>
+                        <hr class="text-white h-5 bg-white flex-1 ml-2">
+                    </div>
+                </div>    
+                <p class="text-white text-sm md:text-base leading-relaxed p-5">
+                    @yield('before_eclipse')
+                </p>
+                <div class="pt-4 pr-4 pl-4 md:pt-5 md:pr-5 md:pl-5">
+                    <div class="flex items-center mb-4">
+                        <h2 class="text-white text-2xl  md:text-4xl pb-2 pr-2 shrink-0">Après l'éclipse</h2>
+                        <hr class="text-white h-5 bg-white flex-1 ml-2">
+                    </div>
+                </div>
+                <p class="text-white text-sm md:text-base leading-relaxed p-5">
+                    @yield('after_eclipse')
+                </p>
+            </div>
+        </div>  
+    
+
+    {{-- Image droite --}}
+    <div class="hidden lg:block  lg:sticky  lg:top-20  lg:w-60 xl:w-80 shrink-0">
+       @yield('image_cotedroit') 
+    </div>
+
+</div>     
+        
+    
+    
+    </body>
+</html>
     </body>
 </html>
