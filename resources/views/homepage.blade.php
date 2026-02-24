@@ -28,18 +28,23 @@
 
     <div class="bg-black ">
 
-        <div class="relative grid md:grid-cols-3 md:grid-rows-2 ">
-           <div >
-            <a href="/Guts"> 
-                <img src="{{ asset('images/gutsMecheBlanche.png') }}" alt="GutsMecheBlanche" >
-            </a>
+        <div class="relative grid md:grid-cols-1 md:grid-rows-8">
+            <div class="flex">
+                <img src="{{ asset('images/gutsMecheBlanche.png') }}" alt="GutsMecheBlanche" class="w-120 h-120 shrink-0" >
+                <a href="/Guts" class="absolute w-120 h-120 top-0"> </a>
+                <div class="flex flex-col ml-5 flex-1">
+                    <div class="flex items-center">
+                        <h1 class="text-white text-8xl uppercase font-bold">Guts</h1>
+                        <hr class="flex-1 ml-5 mt-2 h-20 bg-white border-white">
+                    </div>
+                    <h2 class="text-white text-4xl mt-6 ">Bonjour</h2>
+                </div>
             </div>
-            <div >
-            <a href="/Griffith"> 
-                <img src="{{ asset('images/Griffith.png') }}" alt="GriffithHomepage" class="w-full h-full">
-            </a>
+            <div>
+                <img src="{{ asset('images/Griffith.png') }}" alt="GriffithHomepage" class="w-120 h-120">
+                <a href="/Griffith" class="absolute w-120 h-120 top-120 "> </a>
             </div>           
-             <p class="text-white">Casca</p>
+            <p class="text-white ">Casca</p>
             <p class="bg-green-300"></p>
             <p class="bg-purple-300"></p>
             <p></p>

@@ -19,17 +19,17 @@
             </style>
         @endif
     </head>
-    <body class="bg-black md:bg-white">
+    <body class="bg-black sm:bg-black md:bg-white">
         <div class="hidden md:block relative justify-center"> 
             <img src="{{ asset('images/Berserk-Logo-PNG.png') }}" alt="logoBerserk" class="absolute z-2 mt-58 ml-50 w-280">
             
-            <a href="/homepage" class=" absolute right-60 top-80 w-245 h-100  z-10 "></a>
+            <a href="/homepage" class="absolute right-60 top-80 w-245 h-100 z-10 "></a>
                
             <img src="{{ asset('images/gutsespace.jpg') }}" alt="gutsPetitEspace" class="relative" >
-            <a href="/Guts"  class=" absolute right-0 bottom-0 w-150 h-60 " ></a>
+            <a href="/Guts"  class="absolute right-0 bottom-0 w-150 h-60" ></a>
         </div>
 
-        <div class="block  mt-32 sm:hidden relative justify-center">
+        <div class="block mt-32 md:hidden relative justify-center">
             <img src="{{  asset('images/gutsGriffith.png') }}" alt="GutsVsGriffithAccueil">
 
             <a href="/Griffith" class="absolute top-0 w-full h-50 "></a>
